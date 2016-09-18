@@ -9,9 +9,10 @@ namespace Wangjianlong.functionality.Tools.Common
 {
     public static class FileManager
     {
-        public static string SelectFile(string filter,string title)
+        public static string SelectFile(string filter,string title,string startFolder=null)
         {
             OpenFileDialog openfileDialog = new OpenFileDialog();
+            openfileDialog.InitialDirectory = startFolder;
             openfileDialog.Filter = filter;
             openfileDialog.Title = title;
             if (openfileDialog.ShowDialog() == DialogResult.OK)
