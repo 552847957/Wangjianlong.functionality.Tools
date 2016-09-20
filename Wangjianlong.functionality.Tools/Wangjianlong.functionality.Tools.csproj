@@ -114,11 +114,18 @@
     </Compile>
     <Compile Include="Models\TangField.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectionForm.Designer.cs">
+      <DependentUpon>ProjectionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\DefineTool.cs" />
     <Compile Include="Tools\DialogClass.cs" />
     <Compile Include="Tools\ITang.cs" />
     <Compile Include="Tools\MergeTCMCClass.cs" />
+    <Compile Include="Tools\ProjectionClass.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MergeTCMCForm.resx">
       <DependentUpon>MergeTCMCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectionForm.resx">
+      <DependentUpon>ProjectionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
