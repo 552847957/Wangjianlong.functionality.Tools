@@ -8,6 +8,8 @@ namespace Wangjianlong.functionality.Tools.Tools
     interface ITang
     {
         string Description { get; }
+        string Error { get; set; }
+        int Count { get; set; }
         bool Init();
     }
 }

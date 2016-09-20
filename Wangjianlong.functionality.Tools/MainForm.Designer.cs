@@ -32,6 +32,7 @@
             this.DefineProjectionButton = new System.Windows.Forms.Button();
             this.MergeTCMCButton = new System.Windows.Forms.Button();
             this.axLicenseControl1 = new ESRI.ArcGIS.Controls.AxLicenseControl();
+            this.Projectionbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             // 
             // MergeTCMCButton
             // 
-            this.MergeTCMCButton.Location = new System.Drawing.Point(13, 42);
+            this.MergeTCMCButton.Location = new System.Drawing.Point(12, 43);
             this.MergeTCMCButton.Name = "MergeTCMCButton";
             this.MergeTCMCButton.Size = new System.Drawing.Size(192, 23);
             this.MergeTCMCButton.TabIndex = 1;
@@ -64,11 +65,22 @@
             this.axLicenseControl1.Size = new System.Drawing.Size(32, 32);
             this.axLicenseControl1.TabIndex = 2;
             // 
+            // Projectionbutton
+            // 
+            this.Projectionbutton.Location = new System.Drawing.Point(12, 72);
+            this.Projectionbutton.Name = "Projectionbutton";
+            this.Projectionbutton.Size = new System.Drawing.Size(192, 23);
+            this.Projectionbutton.TabIndex = 3;
+            this.Projectionbutton.Text = "批量转坐标（Projection）";
+            this.Projectionbutton.UseVisualStyleBackColor = true;
+            this.Projectionbutton.Click += new System.EventHandler(this.Projectionbutton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(219, 261);
+            this.Controls.Add(this.Projectionbutton);
             this.Controls.Add(this.axLicenseControl1);
             this.Controls.Add(this.MergeTCMCButton);
             this.Controls.Add(this.DefineProjectionButton);
@@ -86,5 +98,6 @@
         private System.Windows.Forms.Button DefineProjectionButton;
         private System.Windows.Forms.Button MergeTCMCButton;
         private ESRI.ArcGIS.Controls.AxLicenseControl axLicenseControl1;
+        private System.Windows.Forms.Button Projectionbutton;
     }
 }

@@ -27,5 +27,11 @@ namespace Wangjianlong.functionality.Tools
             var form = new MergeTCMCForm();
             form.ShowDialog(this);
         }
+
+        private void Projectionbutton_Click(object sender, EventArgs e)
+        {
+            var form = new ProjectionForm();
+            form.ShowDialog(this);
+        }
     }
 }
