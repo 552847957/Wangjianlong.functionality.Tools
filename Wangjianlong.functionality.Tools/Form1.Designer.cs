@@ -62,6 +62,7 @@
             // 
             this.FolderTextBox.Location = new System.Drawing.Point(95, 23);
             this.FolderTextBox.Name = "FolderTextBox";
+            this.FolderTextBox.ReadOnly = true;
             this.FolderTextBox.Size = new System.Drawing.Size(237, 21);
             this.FolderTextBox.TabIndex = 2;
             // 
@@ -99,6 +100,7 @@
             // 
             this.CoordinateTextBox.Location = new System.Drawing.Point(96, 69);
             this.CoordinateTextBox.Name = "CoordinateTextBox";
+            this.CoordinateTextBox.ReadOnly = true;
             this.CoordinateTextBox.Size = new System.Drawing.Size(237, 21);
             this.CoordinateTextBox.TabIndex = 6;
             // 
@@ -126,6 +128,7 @@
             this.Controls.Add(this.axLicenseControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "批量定义坐标系(Defined Projection)";
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).EndInit();
             this.ResumeLayout(false);

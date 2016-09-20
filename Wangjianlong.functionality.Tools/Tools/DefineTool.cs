@@ -22,7 +22,7 @@ namespace Wangjianlong.functionality.Tools.Tools
         }
         private bool Work(string filePath)
         {
-            IFeatureClass featureClass = ArcGISFileHelper.GetShpFeatureClass(System.IO.Path.GetDirectoryName(filePath), System.IO.Path.GetFileNameWithoutExtension(filePath));
+            IFeatureClass featureClass = ArcGISFileHelper.GetShpFeatureClass(filePath);
             if (featureClass == null) return false;
             IGeoDataset geoDataset = featureClass as IGeoDataset;
             IGeoDatasetSchemaEdit geoDatasetSchemaEdit = geoDataset as IGeoDatasetSchemaEdit;

@@ -51,6 +51,9 @@
     <Reference Include="ESRI.ArcGIS.Display, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
+    <Reference Include="ESRI.ArcGIS.Framework, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
     <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
@@ -87,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\ArcGISFileHelper.cs" />
+    <Compile Include="Common\FeatureClassManager.cs" />
     <Compile Include="Common\FileManager.cs" />
     <Compile Include="Common\SpatialReferenceManager.cs" />
     <Compile Include="Common\WorkspaceManager.cs" />
@@ -96,11 +100,33 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MergeTCMCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MergeTCMCForm.Designer.cs">
+      <DependentUpon>MergeTCMCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TangField.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\DefineTool.cs" />
+    <Compile Include="Tools\DialogClass.cs" />
+    <Compile Include="Tools\ITang.cs" />
+    <Compile Include="Tools\MergeTCMCClass.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MergeTCMCForm.resx">
+      <DependentUpon>MergeTCMCForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

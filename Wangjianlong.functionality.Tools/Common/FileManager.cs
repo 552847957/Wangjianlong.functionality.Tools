@@ -32,9 +32,10 @@ namespace Wangjianlong.functionality.Tools.Common
             return string.Empty;
         }
 
-        public static string SaveFile(string filter,string title)
+        public static string SaveFile(string filter,string title,string startPath=null)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = startPath;
             saveFileDialog.Filter = filter;
             saveFileDialog.Title = title;
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
