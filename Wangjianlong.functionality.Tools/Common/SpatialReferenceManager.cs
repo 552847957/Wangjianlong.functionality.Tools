@@ -75,5 +75,16 @@ namespace Wangjianlong.functionality.Tools.Common
             if (pGeoDatasetSchemaEdit.CanAlterSpatialReference == true)
                 pGeoDatasetSchemaEdit.AlterSpatialReference(pSpatialReference);
         }
+
+        public static ISpatialReference GetShpSpatialReference(this string filePath)
+        {
+            var featureClass = filePath.GetShpFeatureClass();
+            if (featureClass != null)
+            {
+                IGeoDataset geoDataset = featureClass as IGeoDataset;
+                return geoDataset.SpatialReference;
+            }
+            return null;
+        }
     }
 }

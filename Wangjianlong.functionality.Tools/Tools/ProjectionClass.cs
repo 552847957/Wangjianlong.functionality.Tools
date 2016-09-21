@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Wangjianlong.functionality.Tools.Common;
+using ESRI.ArcGIS.Geoprocessor;
+using ESRI.ArcGIS.Geoprocessing;
 
 namespace Wangjianlong.functionality.Tools.Tools
 {
@@ -20,6 +22,7 @@ namespace Wangjianlong.functionality.Tools.Tools
         public string Error { get; set; }
         public int Count { get; set; }
         public string Folder { get; set; }
+        public string OutFolder { get; set; }
         public string CoordinateFile { get; set; }
         private ISpatialReference SpatialReference { get; set; }
         private List<string> Files { get; set; }
@@ -59,15 +62,33 @@ namespace Wangjianlong.functionality.Tools.Tools
             StepProgressor.Message = "开始进行Projection";
             ParallelLoopResult result= Parallel.ForEach<string>(Files, s => { Analyze(s); });
             StepProgressor.Message = "完成";
+            ProgressDialog.HideDialog();
             return true;
         }
 
         private void Analyze(string filePath)
         {
-            var featureClass = filePath.GetShpFeatureClass();
-            if (featureClass == null)
+            Geoprocessor gp = new Geoprocessor();
+            ESRI.ArcGIS.DataManagementTools.Project tool = new ESRI.ArcGIS.DataManagementTools.Project();
+            tool.in_dataset = filePath;
+            tool.in_coor_system = filePath.GetShpSpatialReference();
+            tool.out_dataset = System.IO.Path.Combine(OutFolder, System.IO.Path.GetFileNameWithoutExtension(filePath) + "-Project.shp");
+            tool.out_coor_system = SpatialReference;
+            try
             {
-                return;
+                var result = gp.Execute(tool, null) as IGeoProcessorResult;
+                if (result == null)
+                {
+                    var error = string.Empty;
+                    for(var i = 0; i < gp.MessageCount; i++)
+                    {
+                        error += gp.GetMessage(i);
+                    }
+                    Console.WriteLine("投影失败！错误信息：" + error);
+                }
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
             }
         }
 

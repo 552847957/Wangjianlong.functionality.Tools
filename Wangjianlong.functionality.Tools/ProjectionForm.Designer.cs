@@ -35,6 +35,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.Projectionbutton = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -52,9 +55,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 12);
+            this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 1;
-            this.label1.Text = "请选择目录：";
+            this.label1.Text = "文件目录：";
             // 
             // textBox1
             // 
@@ -77,9 +80,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 12);
+            this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 4;
-            this.label2.Text = "请选择坐标系：";
+            this.label2.Text = "坐标系：";
             // 
             // button2
             // 
@@ -93,7 +96,7 @@
             // 
             // Projectionbutton
             // 
-            this.Projectionbutton.Location = new System.Drawing.Point(96, 81);
+            this.Projectionbutton.Location = new System.Drawing.Point(96, 118);
             this.Projectionbutton.Name = "Projectionbutton";
             this.Projectionbutton.Size = new System.Drawing.Size(75, 23);
             this.Projectionbutton.TabIndex = 6;
@@ -101,11 +104,41 @@
             this.Projectionbutton.UseVisualStyleBackColor = true;
             this.Projectionbutton.Click += new System.EventHandler(this.Projectionbutton_Click);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(96, 79);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(240, 21);
+            this.textBox3.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 12);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "输出目录：";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(342, 77);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(47, 23);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "...";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // ProjectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 116);
+            this.ClientSize = new System.Drawing.Size(398, 153);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.Projectionbutton);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
@@ -131,5 +164,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button Projectionbutton;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button3;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Wangjianlong.functionality.Tools.Common;
+using Wangjianlong.functionality.Tools.Tools;
 
 namespace Wangjianlong.functionality.Tools
 {
@@ -41,8 +42,21 @@ namespace Wangjianlong.functionality.Tools
                 return;
             }
             this.Projectionbutton.Enabled = false;
-
+            var tool = new ProjectionClass() { Folder = this.textBox1.Text, CoordinateFile = this.textBox2.Text, OutFolder = this.textBox3.Text };
+            if (!tool.Work())
+            {
+                MessageBox.Show(string.Format("失败！{0}", tool.Error));
+            }
+            else
+            {
+                MessageBox.Show("Finish");
+            }
             this.Projectionbutton.Enabled = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.textBox3.Text = FileManager.SelectFolder(this.textBox3.Text);
         }
     }
 }

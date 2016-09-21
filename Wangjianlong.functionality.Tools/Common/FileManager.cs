@@ -24,7 +24,7 @@ namespace Wangjianlong.functionality.Tools.Common
 
         public static string SelectCoordinateFile()
         {
-            return SelectFile("坐标系文件|*.prj", "请选择坐标系文件", System.IO.Path.Combine(Application.StartupPath, System.Configuration.ConfigurationManager.AppSettings["Coordinate"]);
+            return SelectFile("坐标系文件|*.prj", "请选择坐标系文件", System.IO.Path.Combine(Application.StartupPath, System.Configuration.ConfigurationManager.AppSettings["Coordinate"]));
         }
         public static string SelectFolder(string startPath=null)
         {
