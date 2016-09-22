@@ -42,7 +42,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(342, 10);
+            this.button1.Location = new System.Drawing.Point(332, 10);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(47, 23);
             this.button1.TabIndex = 0;
@@ -64,7 +64,7 @@
             this.textBox1.Location = new System.Drawing.Point(96, 10);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(240, 21);
+            this.textBox1.Size = new System.Drawing.Size(230, 21);
             this.textBox1.TabIndex = 2;
             // 
             // textBox2
@@ -72,7 +72,7 @@
             this.textBox2.Location = new System.Drawing.Point(96, 46);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(240, 21);
+            this.textBox2.Size = new System.Drawing.Size(230, 21);
             this.textBox2.TabIndex = 5;
             // 
             // label2
@@ -86,7 +86,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(342, 46);
+            this.button2.Location = new System.Drawing.Point(332, 46);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(47, 23);
             this.button2.TabIndex = 3;
@@ -109,7 +109,7 @@
             this.textBox3.Location = new System.Drawing.Point(96, 79);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(240, 21);
+            this.textBox3.Size = new System.Drawing.Size(230, 21);
             this.textBox3.TabIndex = 9;
             // 
             // label3
@@ -123,7 +123,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(342, 77);
+            this.button3.Location = new System.Drawing.Point(332, 77);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(47, 23);
             this.button3.TabIndex = 7;
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 153);
+            this.ClientSize = new System.Drawing.Size(391, 153);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button3);

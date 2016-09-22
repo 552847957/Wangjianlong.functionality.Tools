@@ -33,5 +33,11 @@ namespace Wangjianlong.functionality.Tools
             var form = new ProjectionForm();
             form.ShowDialog(this);
         }
+
+        private void PolylineToPolygonbutton_Click(object sender, EventArgs e)
+        {
+            var form = new PolylineToPolygonForm();
+            form.ShowDialog(this);
+        }
     }
 }

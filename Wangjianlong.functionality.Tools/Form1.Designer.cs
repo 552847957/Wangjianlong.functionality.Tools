@@ -129,7 +129,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "批量定义坐标系(Defined Projection)";
+            this.Text = "批量定义坐标系(Define Projection)";
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

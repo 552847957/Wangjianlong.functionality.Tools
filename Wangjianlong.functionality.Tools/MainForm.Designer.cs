@@ -33,6 +33,7 @@
             this.MergeTCMCButton = new System.Windows.Forms.Button();
             this.axLicenseControl1 = new ESRI.ArcGIS.Controls.AxLicenseControl();
             this.Projectionbutton = new System.Windows.Forms.Button();
+            this.PolylineToPolygonbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,11 +76,22 @@
             this.Projectionbutton.UseVisualStyleBackColor = true;
             this.Projectionbutton.Click += new System.EventHandler(this.Projectionbutton_Click);
             // 
+            // PolylineToPolygonbutton
+            // 
+            this.PolylineToPolygonbutton.Location = new System.Drawing.Point(13, 102);
+            this.PolylineToPolygonbutton.Name = "PolylineToPolygonbutton";
+            this.PolylineToPolygonbutton.Size = new System.Drawing.Size(191, 23);
+            this.PolylineToPolygonbutton.TabIndex = 4;
+            this.PolylineToPolygonbutton.Text = "PolylineToPolygon";
+            this.PolylineToPolygonbutton.UseVisualStyleBackColor = true;
+            this.PolylineToPolygonbutton.Click += new System.EventHandler(this.PolylineToPolygonbutton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(219, 261);
+            this.Controls.Add(this.PolylineToPolygonbutton);
             this.Controls.Add(this.Projectionbutton);
             this.Controls.Add(this.axLicenseControl1);
             this.Controls.Add(this.MergeTCMCButton);
@@ -99,5 +111,6 @@
         private System.Windows.Forms.Button MergeTCMCButton;
         private ESRI.ArcGIS.Controls.AxLicenseControl axLicenseControl1;
         private System.Windows.Forms.Button Projectionbutton;
+        private System.Windows.Forms.Button PolylineToPolygonbutton;
     }
 }

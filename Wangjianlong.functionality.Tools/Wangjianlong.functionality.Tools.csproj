@@ -119,6 +119,12 @@
       <DependentUpon>MergeTCMCForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\TangField.cs" />
+    <Compile Include="PolylineToPolygonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PolylineToPolygonForm.Designer.cs">
+      <DependentUpon>PolylineToPolygonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProjectionForm.cs">
       <SubType>Form</SubType>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MergeTCMCForm.resx">
       <DependentUpon>MergeTCMCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PolylineToPolygonForm.resx">
+      <DependentUpon>PolylineToPolygonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectionForm.resx">
       <DependentUpon>ProjectionForm.cs</DependentUpon>
