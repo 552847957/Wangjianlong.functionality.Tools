@@ -34,6 +34,7 @@
             this.axLicenseControl1 = new ESRI.ArcGIS.Controls.AxLicenseControl();
             this.Projectionbutton = new System.Windows.Forms.Button();
             this.PolylineToPolygonbutton = new System.Windows.Forms.Button();
+            this.ProgressBarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             // 
             this.MergeTCMCButton.Location = new System.Drawing.Point(12, 43);
             this.MergeTCMCButton.Name = "MergeTCMCButton";
-            this.MergeTCMCButton.Size = new System.Drawing.Size(192, 23);
+            this.MergeTCMCButton.Size = new System.Drawing.Size(193, 23);
             this.MergeTCMCButton.TabIndex = 1;
             this.MergeTCMCButton.Text = "合并（关联图层名）";
             this.MergeTCMCButton.UseVisualStyleBackColor = true;
@@ -60,7 +61,7 @@
             // axLicenseControl1
             // 
             this.axLicenseControl1.Enabled = true;
-            this.axLicenseControl1.Location = new System.Drawing.Point(173, 217);
+            this.axLicenseControl1.Location = new System.Drawing.Point(173, 350);
             this.axLicenseControl1.Name = "axLicenseControl1";
             this.axLicenseControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axLicenseControl1.OcxState")));
             this.axLicenseControl1.Size = new System.Drawing.Size(32, 32);
@@ -70,7 +71,7 @@
             // 
             this.Projectionbutton.Location = new System.Drawing.Point(12, 72);
             this.Projectionbutton.Name = "Projectionbutton";
-            this.Projectionbutton.Size = new System.Drawing.Size(192, 23);
+            this.Projectionbutton.Size = new System.Drawing.Size(193, 23);
             this.Projectionbutton.TabIndex = 3;
             this.Projectionbutton.Text = "批量转坐标（Projection）";
             this.Projectionbutton.UseVisualStyleBackColor = true;
@@ -80,17 +81,28 @@
             // 
             this.PolylineToPolygonbutton.Location = new System.Drawing.Point(13, 102);
             this.PolylineToPolygonbutton.Name = "PolylineToPolygonbutton";
-            this.PolylineToPolygonbutton.Size = new System.Drawing.Size(191, 23);
+            this.PolylineToPolygonbutton.Size = new System.Drawing.Size(192, 23);
             this.PolylineToPolygonbutton.TabIndex = 4;
             this.PolylineToPolygonbutton.Text = "PolylineToPolygon";
             this.PolylineToPolygonbutton.UseVisualStyleBackColor = true;
             this.PolylineToPolygonbutton.Click += new System.EventHandler(this.PolylineToPolygonbutton_Click);
             // 
+            // ProgressBarButton
+            // 
+            this.ProgressBarButton.Location = new System.Drawing.Point(13, 316);
+            this.ProgressBarButton.Name = "ProgressBarButton";
+            this.ProgressBarButton.Size = new System.Drawing.Size(192, 23);
+            this.ProgressBarButton.TabIndex = 5;
+            this.ProgressBarButton.Text = "ProgressBar";
+            this.ProgressBarButton.UseVisualStyleBackColor = true;
+            this.ProgressBarButton.Click += new System.EventHandler(this.ProgressBarButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(219, 261);
+            this.ClientSize = new System.Drawing.Size(219, 394);
+            this.Controls.Add(this.ProgressBarButton);
             this.Controls.Add(this.PolylineToPolygonbutton);
             this.Controls.Add(this.Projectionbutton);
             this.Controls.Add(this.axLicenseControl1);
@@ -112,5 +124,6 @@
         private ESRI.ArcGIS.Controls.AxLicenseControl axLicenseControl1;
         private System.Windows.Forms.Button Projectionbutton;
         private System.Windows.Forms.Button PolylineToPolygonbutton;
+        private System.Windows.Forms.Button ProgressBarButton;
     }
 }

@@ -39,5 +39,11 @@ namespace Wangjianlong.functionality.Tools
             var form = new PolylineToPolygonForm();
             form.ShowDialog(this);
         }
+
+        private void ProgressBarButton_Click(object sender, EventArgs e)
+        {
+            var form = new ProgressBarForm();
+            form.ShowDialog(this);
+        }
     }
 }

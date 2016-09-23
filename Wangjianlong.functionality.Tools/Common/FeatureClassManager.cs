@@ -75,5 +75,50 @@ namespace Wangjianlong.functionality.Tools.Common
             fieldEdit.AliasName_2 = addField.AliasName;
             pClass.AddField(field);
         }
+
+        public static List<string> GetUniqueValue(this IFeatureClass featureClass,string fieldName)
+        {
+            var list = new List<string>();
+            //var dataset = featureClass as IDataset;
+            //var queryDef = (dataset.Workspace as IFeatureWorkspace).CreateQueryDef();
+            //queryDef.Tables = dataset.Name;
+            //queryDef.SubFields = "DISTINCT (" + fieldName.ToUpper() + ")";
+            //ICursor cursor = queryDef.Evaluate();
+            //var fields = featureClass.Fields;
+            //var field = fields.get_Field(fields.FindField(fieldName));
+            //var row = cursor.NextRow();
+            //while (row != null)
+            //{
+            //    var val = row.get_Value(0).ToString();
+            //    if (field.Type == esriFieldType.esriFieldTypeString)
+            //    {
+            //        list.Add(string.Format("'{0}'", val));
+            //    }
+            //    else
+            //    {
+            //        list.Add(val);
+            //    }
+
+            //    row = cursor.NextRow();
+            //}
+            //System.Runtime.InteropServices.Marshal.ReleaseComObject(cursor);
+            int index = featureClass.Fields.FindField(fieldName);
+            if (index > -1)
+            {
+                var featureCursor = featureClass.Search(null, false);
+                var feature = featureCursor.NextFeature();
+                while (feature != null)
+                {
+                    var val = feature.get_Value(index).ToString();
+                    if (!list.Contains(val))
+                    {
+                        list.Add(val);
+                    }
+                    feature = featureCursor.NextFeature();
+                }
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(featureCursor);
+            }
+            return list;
+        }
     }
 }

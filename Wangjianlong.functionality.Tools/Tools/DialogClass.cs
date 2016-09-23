@@ -31,6 +31,7 @@ namespace Wangjianlong.functionality.Tools.Tools
             StepProgressor = ProgressDialog as IStepProgressor;
             StepProgressor.MinRange = 0;
             StepProgressor.StepValue = 1;
+            StepProgressor.Message = "正在初始化工具......";
             ProgressDialog.ShowDialog();
             return true;
         }
