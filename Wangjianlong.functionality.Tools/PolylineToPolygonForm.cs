@@ -58,7 +58,27 @@ namespace Wangjianlong.functionality.Tools
 
         private void Analyzebutton_Click(object sender, EventArgs e)
         {
-
+            this.Analyzebutton.Enabled = false;
+            var list = new List<string>();
+            foreach(var item in this.checkedListBox1.CheckedItems)
+            {
+                list.Add(item.ToString());
+            }
+            var tool = new Wangjianlong.functionality.Tools.Tools.CADPolylineToPolygonTool
+            {
+                CADFilePath = this.textBox1.Text,
+                SaveFilePath = this.textBox2.Text,
+                Layers = list
+            };
+            if (!tool.Work())
+            {
+                MessageBox.Show(string.Format("failed,{0}", tool.Error));
+            }
+            else
+            {
+                MessageBox.Show("finish");
+            }
+            this.Analyzebutton.Enabled = true;
         }
     }
 }
