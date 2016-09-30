@@ -9,7 +9,7 @@ using Wangjianlong.functionality.Tools.Models;
 
 namespace Wangjianlong.functionality.Tools.Tools
 {
-    public class MergeTCMCClass:DialogClass,ITang
+    public class MergeTCMCClass : DialogClass, ITang
     {
         public override string Description
         {
@@ -54,7 +54,7 @@ namespace Wangjianlong.functionality.Tools.Tools
                 Error += string.Format("无法生成shapefile文件，请确保程序以管理员运行；");
                 return false;
             }
-           // InsertFeatureCursor = FeatureClass.Insert(true);
+            // InsertFeatureCursor = FeatureClass.Insert(true);
             Fields = new List<TangField>() { new TangField() { Name = "TCMC", Alias = "图层名称", Type = esriFieldType.esriFieldTypeString, Index = FeatureClass.Fields.FindField("TCMC") } };
             return true;
         }
@@ -68,7 +68,7 @@ namespace Wangjianlong.functionality.Tools.Tools
                 ProgressDialog.HideDialog();
                 return false;
             }
-            foreach(var file in Files)
+            foreach (var file in Files)
             {
                 Count++;
                 var tcmc = System.IO.Path.GetFileNameWithoutExtension(file);
@@ -105,7 +105,7 @@ namespace Wangjianlong.functionality.Tools.Tools
                                 aw.ZAware = false;
                             }
                             featureBuffer.Shape = copy;
-                            foreach(var field in Fields)
+                            foreach (var field in Fields)
                             {
                                 if (field.Name == "TCMC")
                                 {
@@ -117,14 +117,15 @@ namespace Wangjianlong.functionality.Tools.Tools
                                 {
                                     featureBuffer.set_Value(field.Index, feature.get_Value(a));
                                 }
-                                
+
                             }
                             try
                             {
                                 object featureOID = insertfeaturecursor.InsertFeature(featureBuffer);
                                 insertfeaturecursor.Flush();
 
-                            }catch(Exception ex)
+                            }
+                            catch (Exception ex)
                             {
                                 Error += string.Format("在读取{0}时，合并错误，错误信息：{1}；", tcmc, ex.Message);
                                 break;
@@ -142,15 +143,15 @@ namespace Wangjianlong.functionality.Tools.Tools
                 }
                 StepProgressor.Step();
             }
-           // System.Runtime.InteropServices.Marshal.ReleaseComObject(InsertFeatureCursor);
+            // System.Runtime.InteropServices.Marshal.ReleaseComObject(InsertFeatureCursor);
             ProgressDialog.HideDialog();
             return true;
         }
 
-        private void CheckField(IFeatureClass currentFeatureClass,IFeatureClass AnalyzeFeatureClass)
+        private void CheckField(IFeatureClass currentFeatureClass, IFeatureClass AnalyzeFeatureClass)
         {
             var fields = AnalyzeFeatureClass.Fields;
-            for(var i = 0; i < fields.FieldCount; i++)
+            for (var i = 0; i < fields.FieldCount; i++)
             {
                 var field = fields.get_Field(i);
                 if (field.Name.ToUpper().Contains("SHAPE") || field.Name.ToUpper().Contains("FID"))

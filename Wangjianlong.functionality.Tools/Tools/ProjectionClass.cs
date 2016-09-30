@@ -29,7 +29,7 @@ namespace Wangjianlong.functionality.Tools.Tools
 
         public bool Init()
         {
-            if (System.IO.Directory.Exists(Folder))
+            if (!System.IO.Directory.Exists(Folder))
             {
                 Error += string.Format("指定的目录{0}不存在或者不正确", Folder);
                 return false;

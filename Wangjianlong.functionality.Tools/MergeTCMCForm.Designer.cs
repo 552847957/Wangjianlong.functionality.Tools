@@ -35,6 +35,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Analyzebutton = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -93,7 +94,7 @@
             // 
             // Analyzebutton
             // 
-            this.Analyzebutton.Location = new System.Drawing.Point(96, 98);
+            this.Analyzebutton.Location = new System.Drawing.Point(94, 144);
             this.Analyzebutton.Name = "Analyzebutton";
             this.Analyzebutton.Size = new System.Drawing.Size(75, 23);
             this.Analyzebutton.TabIndex = 6;
@@ -101,11 +102,22 @@
             this.Analyzebutton.UseVisualStyleBackColor = true;
             this.Analyzebutton.Click += new System.EventHandler(this.Analyzebutton_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(217, 143);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "方式二合成";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // MergeTCMCForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 135);
+            this.ClientSize = new System.Drawing.Size(391, 178);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.Analyzebutton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
@@ -131,5 +143,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Analyzebutton;
+        private System.Windows.Forms.Button button3;
     }
 }

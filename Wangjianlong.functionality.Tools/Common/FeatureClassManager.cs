@@ -64,17 +64,19 @@ namespace Wangjianlong.functionality.Tools.Common
             return list;
         }
 
-        public static void AddField(IFeatureClass featureClass,IField addField)
+        public static void AddField(this IFeatureClass featureClass,IField addField)
         {
             IClass pClass = featureClass as IClass;
             IFieldsEdit fieldsEdit = featureClass.Fields as IFieldsEdit;
-            IField field = new FieldClass();
-            IFieldEdit2 fieldEdit = field as IFieldEdit2;
-            fieldEdit.Type_2 = addField.Type;
-            fieldEdit.Name_2 = addField.Name;
-            fieldEdit.AliasName_2 = addField.AliasName;
-            pClass.AddField(field);
+            //IField field = new FieldClass();
+            //IFieldEdit2 fieldEdit = field as IFieldEdit2;
+            //fieldEdit.Type_2 = addField.Type;
+            //fieldEdit.Name_2 = addField.Name;
+            //fieldEdit.AliasName_2 = addField.AliasName;
+            pClass.AddField(addField);
         }
+
+        
 
         public static List<string> GetUniqueValue(this IFeatureClass featureClass,string fieldName)
         {
