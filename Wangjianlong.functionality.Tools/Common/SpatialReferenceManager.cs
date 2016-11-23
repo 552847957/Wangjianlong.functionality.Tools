@@ -45,7 +45,7 @@ namespace Wangjianlong.functionality.Tools.Common
             return pSpatialReference;
         }
 
-        public static ISpatialReference GetSpatialReferenc(IFeatureLayer pFeatureLayer)
+        public static ISpatialReference GetSpatialReference(IFeatureLayer pFeatureLayer)
         {
             IFeatureClass pFeatureClass = pFeatureLayer.FeatureClass;
             IGeoDataset pGeoDataset = pFeatureClass as IGeoDataset;

@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="~/Scripts/Files/js/vendor/jquery.ui.widget.js"></script>
+    <script src="~/Scripts/Files/js/jquery.iframe-transport.js"></script>
+    <script src="~/Scripts/Files/js/jquery.fileupload.js"></script>
+
+    <script>
+        $(function () {
+            $("#fileupload").fileupload({
+                dataType: 'json',
+                done: function (e, data) {
+                    $.each(data.result.files, function (index, file) {
+                        $("<p/>").text(file.name).appendTo(document.body);
+                    });
+                }
+            });
+        })
+    </script>
+    <style>
+        .bar{
+            height:18px;
+            background:green;
+        }
+    </style>
+</head>
+<body>
+    <input id="fileupload" type="file" name="file[]" data-url="/File/Upload" multiple />
+
+    <div id="progress">
+        <div class="bar" style="width:0%"></div> 
+    </div>
+</body>
+</html>

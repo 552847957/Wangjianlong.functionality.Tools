@@ -44,6 +44,7 @@
     <Reference Include="ESRI.ArcGIS.Controls, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
+    <Reference Include="ESRI.ArcGIS.ConversionTools, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
     <Reference Include="ESRI.ArcGIS.DataManagementTools, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
     <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <EmbedInteropTypes>False</EmbedInteropTypes>
@@ -80,6 +81,9 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Version, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="log4net">
+      <HintPath>E:\迅雷下载\log4net-1.2.15\bin\net\4.0\release\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -97,8 +101,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\ArcGISFileHelper.cs" />
+    <Compile Include="Common\CADManager.cs" />
+    <Compile Include="Common\CheckedListBoxManager.cs" />
     <Compile Include="Common\FeatureClassManager.cs" />
     <Compile Include="Common\FileManager.cs" />
+    <Compile Include="Common\PolylineManager.cs" />
     <Compile Include="Common\SpatialReferenceManager.cs" />
     <Compile Include="Common\WorkspaceManager.cs" />
     <Compile Include="Form1.cs">
@@ -113,6 +120,31 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CAD_PolylineToPolygonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CAD_PolylineToPolygonForm.Designer.cs">
+      <DependentUpon>CAD_PolylineToPolygonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExtractCADForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExtractCADForm.Designer.cs">
+      <DependentUpon>ExtractCADForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LogForm.Designer.cs">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MutlExtractCADForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MutlExtractCADForm.Designer.cs">
+      <DependentUpon>MutlExtractCADForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,15 +181,33 @@
     <Compile Include="Tools\CADPolylineToPolygonTool.cs" />
     <Compile Include="Tools\DefineTool.cs" />
     <Compile Include="Tools\DialogClass.cs" />
+    <Compile Include="Tools\ExtractCADPolylineToPolygonTool.cs" />
+    <Compile Include="Tools\ExtractCADsToOnePolygonTool.cs" />
+    <Compile Include="Tools\ExtractCADsToOnePolylineTool.cs" />
+    <Compile Include="Tools\ExtractCADToPolylineTool.cs" />
+    <Compile Include="Tools\FeatureClassExtractTool.cs" />
     <Compile Include="Tools\ITang.cs" />
     <Compile Include="Tools\MergeTCMCClass.cs" />
     <Compile Include="Tools\MergeTCMCTool.cs" />
+    <Compile Include="Tools\PolylineToPolygonTool.cs" />
     <Compile Include="Tools\ProjectionClass.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CAD_PolylineToPolygonForm.resx">
+      <DependentUpon>CAD_PolylineToPolygonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExtractCADForm.resx">
+      <DependentUpon>ExtractCADForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LogForm.resx">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MutlExtractCADForm.resx">
+      <DependentUpon>MutlExtractCADForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -193,6 +243,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

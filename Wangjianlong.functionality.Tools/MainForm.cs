@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Wangjianlong.functionality.Tools.Forms;
 
 namespace Wangjianlong.functionality.Tools
 {
@@ -43,6 +44,12 @@ namespace Wangjianlong.functionality.Tools
         private void ProgressBarButton_Click(object sender, EventArgs e)
         {
             var form = new ProgressBarForm();
+            form.ShowDialog(this);
+        }
+
+        private void ExtractCADButton_Click(object sender, EventArgs e)
+        {
+            var form = new ExtractCADForm();
             form.ShowDialog(this);
         }
     }

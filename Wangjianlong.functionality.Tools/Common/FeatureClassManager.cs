@@ -15,7 +15,10 @@ namespace Wangjianlong.functionality.Tools.Common
         public static IFeatureClass CreateFeatrueClass(string saveFilePath, ISpatialReference spatialReference, esriGeometryType esriGeometryType)
         {
             IWorkspaceFactory workspaceFactory = new ShapefileWorkspaceFactoryClass();
-            IWorkspaceName workspaceName = workspaceFactory.Create(System.IO.Path.GetDirectoryName(saveFilePath), System.IO.Path.GetFileNameWithoutExtension(saveFilePath), null, 0);
+            var directory = System.IO.Path.GetDirectoryName(saveFilePath);
+            var parent = System.IO.Path.GetDirectoryName(directory);
+            var fileName = System.IO.Path.GetFileName(directory);
+            IWorkspaceName workspaceName = workspaceFactory.Create(parent,fileName , null, 0);
 
             IName name = workspaceName as IName;
             IWorkspace workspace = name.Open() as IWorkspace;
@@ -76,8 +79,14 @@ namespace Wangjianlong.functionality.Tools.Common
             pClass.AddField(addField);
         }
 
-        
-
+        /// <summary>
+        /// 作用：获取要素类中某个字段的唯一值
+        /// 作者：汪建龙
+        /// 编写时间：2016年11月22日13:08:16
+        /// </summary>
+        /// <param name="featureClass"></param>
+        /// <param name="fieldName"></param>
+        /// <returns></returns>
         public static List<string> GetUniqueValue(this IFeatureClass featureClass,string fieldName)
         {
             var list = new List<string>();

@@ -35,6 +35,7 @@
             this.Projectionbutton = new System.Windows.Forms.Button();
             this.PolylineToPolygonbutton = new System.Windows.Forms.Button();
             this.ProgressBarButton = new System.Windows.Forms.Button();
+            this.ExtractCADButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +80,7 @@
             // 
             // PolylineToPolygonbutton
             // 
-            this.PolylineToPolygonbutton.Location = new System.Drawing.Point(13, 102);
+            this.PolylineToPolygonbutton.Location = new System.Drawing.Point(12, 101);
             this.PolylineToPolygonbutton.Name = "PolylineToPolygonbutton";
             this.PolylineToPolygonbutton.Size = new System.Drawing.Size(192, 23);
             this.PolylineToPolygonbutton.TabIndex = 4;
@@ -97,11 +98,22 @@
             this.ProgressBarButton.UseVisualStyleBackColor = true;
             this.ProgressBarButton.Click += new System.EventHandler(this.ProgressBarButton_Click);
             // 
+            // ExtractCADButton
+            // 
+            this.ExtractCADButton.Location = new System.Drawing.Point(12, 131);
+            this.ExtractCADButton.Name = "ExtractCADButton";
+            this.ExtractCADButton.Size = new System.Drawing.Size(192, 23);
+            this.ExtractCADButton.TabIndex = 6;
+            this.ExtractCADButton.Text = "提取CAD图层文件";
+            this.ExtractCADButton.UseVisualStyleBackColor = true;
+            this.ExtractCADButton.Click += new System.EventHandler(this.ExtractCADButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(219, 394);
+            this.Controls.Add(this.ExtractCADButton);
             this.Controls.Add(this.ProgressBarButton);
             this.Controls.Add(this.PolylineToPolygonbutton);
             this.Controls.Add(this.Projectionbutton);
@@ -125,5 +137,6 @@
         private System.Windows.Forms.Button Projectionbutton;
         private System.Windows.Forms.Button PolylineToPolygonbutton;
         private System.Windows.Forms.Button ProgressBarButton;
+        private System.Windows.Forms.Button ExtractCADButton;
     }
 }
