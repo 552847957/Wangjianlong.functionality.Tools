@@ -52,5 +52,11 @@ namespace Wangjianlong.functionality.Tools
             var form = new ExtractCADForm();
             form.ShowDialog(this);
         }
+
+        private void Synthesisbutton_Click(object sender, EventArgs e)
+        {
+            var form = new SynthesisForm();
+            form.ShowDialog(this);
+        }
     }
 }

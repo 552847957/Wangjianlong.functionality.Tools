@@ -36,6 +36,7 @@
             this.PolylineToPolygonbutton = new System.Windows.Forms.Button();
             this.ProgressBarButton = new System.Windows.Forms.Button();
             this.ExtractCADButton = new System.Windows.Forms.Button();
+            this.Synthesisbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,11 +109,22 @@
             this.ExtractCADButton.UseVisualStyleBackColor = true;
             this.ExtractCADButton.Click += new System.EventHandler(this.ExtractCADButton_Click);
             // 
+            // Synthesisbutton
+            // 
+            this.Synthesisbutton.Location = new System.Drawing.Point(12, 160);
+            this.Synthesisbutton.Name = "Synthesisbutton";
+            this.Synthesisbutton.Size = new System.Drawing.Size(192, 23);
+            this.Synthesisbutton.TabIndex = 7;
+            this.Synthesisbutton.Text = "多线段合成";
+            this.Synthesisbutton.UseVisualStyleBackColor = true;
+            this.Synthesisbutton.Click += new System.EventHandler(this.Synthesisbutton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(219, 394);
+            this.Controls.Add(this.Synthesisbutton);
             this.Controls.Add(this.ExtractCADButton);
             this.Controls.Add(this.ProgressBarButton);
             this.Controls.Add(this.PolylineToPolygonbutton);
@@ -138,5 +150,6 @@
         private System.Windows.Forms.Button PolylineToPolygonbutton;
         private System.Windows.Forms.Button ProgressBarButton;
         private System.Windows.Forms.Button ExtractCADButton;
+        private System.Windows.Forms.Button Synthesisbutton;
     }
 }
