@@ -10,6 +10,7 @@ namespace Wangjianlong.functionality.Tools.Tools
 {
     public class DialogClass
     {
+        protected static object missing = Type.Missing;
         public virtual string Description { get; }
         protected int MaxValue { get; set; }
         protected bool CanContinue { get; set; }

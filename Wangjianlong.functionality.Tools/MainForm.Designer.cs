@@ -37,6 +37,9 @@
             this.ProgressBarButton = new System.Windows.Forms.Button();
             this.ExtractCADButton = new System.Windows.Forms.Button();
             this.Synthesisbutton = new System.Windows.Forms.Button();
+            this.TxtToArcGISbutton = new System.Windows.Forms.Button();
+            this.Provincebutton = new System.Windows.Forms.Button();
+            this.MultiAccessbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,11 +122,44 @@
             this.Synthesisbutton.UseVisualStyleBackColor = true;
             this.Synthesisbutton.Click += new System.EventHandler(this.Synthesisbutton_Click);
             // 
+            // TxtToArcGISbutton
+            // 
+            this.TxtToArcGISbutton.Location = new System.Drawing.Point(12, 190);
+            this.TxtToArcGISbutton.Name = "TxtToArcGISbutton";
+            this.TxtToArcGISbutton.Size = new System.Drawing.Size(192, 23);
+            this.TxtToArcGISbutton.TabIndex = 8;
+            this.TxtToArcGISbutton.Text = "国土资源部文件转ArcGIS";
+            this.TxtToArcGISbutton.UseVisualStyleBackColor = true;
+            this.TxtToArcGISbutton.Click += new System.EventHandler(this.TxtToArcGISbutton_Click);
+            // 
+            // Provincebutton
+            // 
+            this.Provincebutton.Location = new System.Drawing.Point(12, 219);
+            this.Provincebutton.Name = "Provincebutton";
+            this.Provincebutton.Size = new System.Drawing.Size(191, 23);
+            this.Provincebutton.TabIndex = 9;
+            this.Provincebutton.Text = "省格式Txt转ArcGIS";
+            this.Provincebutton.UseVisualStyleBackColor = true;
+            this.Provincebutton.Click += new System.EventHandler(this.Provincebutton_Click);
+            // 
+            // MultiAccessbutton
+            // 
+            this.MultiAccessbutton.Location = new System.Drawing.Point(12, 249);
+            this.MultiAccessbutton.Name = "MultiAccessbutton";
+            this.MultiAccessbutton.Size = new System.Drawing.Size(191, 23);
+            this.MultiAccessbutton.TabIndex = 10;
+            this.MultiAccessbutton.Text = "多个Access合成一个Access";
+            this.MultiAccessbutton.UseVisualStyleBackColor = true;
+            this.MultiAccessbutton.Click += new System.EventHandler(this.MultiAccessbutton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(219, 394);
+            this.Controls.Add(this.MultiAccessbutton);
+            this.Controls.Add(this.Provincebutton);
+            this.Controls.Add(this.TxtToArcGISbutton);
             this.Controls.Add(this.Synthesisbutton);
             this.Controls.Add(this.ExtractCADButton);
             this.Controls.Add(this.ProgressBarButton);
@@ -133,6 +169,7 @@
             this.Controls.Add(this.MergeTCMCButton);
             this.Controls.Add(this.DefineProjectionButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "主菜单";
@@ -151,5 +188,8 @@
         private System.Windows.Forms.Button ProgressBarButton;
         private System.Windows.Forms.Button ExtractCADButton;
         private System.Windows.Forms.Button Synthesisbutton;
+        private System.Windows.Forms.Button TxtToArcGISbutton;
+        private System.Windows.Forms.Button Provincebutton;
+        private System.Windows.Forms.Button MultiAccessbutton;
     }
 }

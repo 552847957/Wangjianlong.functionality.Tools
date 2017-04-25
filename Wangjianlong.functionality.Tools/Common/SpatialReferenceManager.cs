@@ -86,5 +86,14 @@ namespace Wangjianlong.functionality.Tools.Common
             }
             return null;
         }
+
+        /// <summary>
+        /// 作用：获取高斯克吕哥西安80  40坐标系
+        /// </summary>
+        /// <returns></returns>
+        public static ISpatialReference Get40SpatialReference()
+        {
+            return CreateSpatialReference(System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "Coordinate Systems/Projected Coordinate Systems/Gauss Kruger/Xian 1980/Xian 1980 3 Degree GK Zone 40.prj"));
+        }
     }
 }

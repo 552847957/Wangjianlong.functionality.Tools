@@ -12,6 +12,15 @@ namespace Wangjianlong.functionality.Tools.Common
 {
     public static class FeatureClassManager
     {
+        /// <summary>
+        /// 作用：创建要素类
+        /// 作者：汪建龙
+        /// 编写时间：2016年12月27日10:50:16
+        /// </summary>
+        /// <param name="saveFilePath"></param>
+        /// <param name="spatialReference"></param>
+        /// <param name="esriGeometryType"></param>
+        /// <returns></returns>
         public static IFeatureClass CreateFeatrueClass(string saveFilePath, ISpatialReference spatialReference, esriGeometryType esriGeometryType)
         {
             IWorkspaceFactory workspaceFactory = new ShapefileWorkspaceFactoryClass();
@@ -130,6 +139,39 @@ namespace Wangjianlong.functionality.Tools.Common
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(featureCursor);
             }
             return list;
+        }
+
+        /// <summary>
+        /// 作用：向要素类中批量增加字段
+        /// 作者：汪建龙
+        /// 编写时间：2016年12月27日10:49:45
+        /// </summary>
+        /// <param name="featureClass"></param>
+        /// <param name="list"></param>
+        public static void AddFields(this IFeatureClass featureClass,List<TangField> list)
+        {
+            if (featureClass == null||list==null||list.Count==0)
+            {
+                return;
+            }
+
+            try
+            {
+                foreach (var item in list)
+                {
+                    IField field = new FieldClass();
+                    IFieldEdit2 fieldEdit = field as IFieldEdit2;
+                    fieldEdit.Type_2 = item.Type;
+                    fieldEdit.Name_2 = item.Name;
+                    fieldEdit.AliasName_2 = item.Alias;
+                    AddField(featureClass, field);
+                }
+            }
+            catch(Exception ex)
+            {
+                System.Diagnostics.Trace.WriteLine(ex);
+            }
+        
         }
     }
 }

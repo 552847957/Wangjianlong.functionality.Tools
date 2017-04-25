@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Wangjianlong.functionality.Tools.Forms;
+using Wangjianlong.functionality.Tools.Forms.Ztop;
 
 namespace Wangjianlong.functionality.Tools
 {
@@ -56,6 +57,24 @@ namespace Wangjianlong.functionality.Tools
         private void Synthesisbutton_Click(object sender, EventArgs e)
         {
             var form = new SynthesisForm();
+            form.ShowDialog(this);
+        }
+
+        private void TxtToArcGISbutton_Click(object sender, EventArgs e)
+        {
+            var form = new TxtToArcGISForm();
+            form.ShowDialog(this);
+        }
+
+        private void Provincebutton_Click(object sender, EventArgs e)
+        {
+            var form = new ProvinceTxtToArcGISForm();
+            form.ShowDialog(this);
+        }
+
+        private void MultiAccessbutton_Click(object sender, EventArgs e)
+        {
+            var form = new MultiAccessForm();
             form.ShowDialog(this);
         }
     }
