@@ -1,4 +1,5 @@
-﻿using ESRI.ArcGIS.DataSourcesFile;
+﻿using ESRI.ArcGIS.DataManagementTools;
+using ESRI.ArcGIS.DataSourcesFile;
 using ESRI.ArcGIS.Geodatabase;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,31 @@ namespace Wangjianlong.functionality.Tools.Common
         public static IFeatureClass GetShpFeatureClass(this string filePath)
         {
             return GetShpFeatureClass(System.IO.Path.GetDirectoryName(filePath), System.IO.Path.GetFileNameWithoutExtension(filePath));
+        }
+
+        /// <summary>
+        /// 作用：新建一个mdb文件
+        /// </summary>
+        /// <param name="folder">文件目录</param>
+        /// <param name="fileName">文件名称</param>
+        /// <returns></returns>
+        public static string CreatePersonalDataBase(string folder,string fileName)
+        {
+            var tool = new CreatePersonalGDB();
+            tool.out_name = fileName;
+            tool.out_folder_path = folder;
+            if (GPHelper.Excute(tool))
+            {
+                return System.IO.Path.Combine(folder, fileName + ".mdb");
+            }
+            return string.Empty;
+
+        }
+
+        public static bool CreatePersonalDataBase(string filePath)
+        {
+            var result = CreatePersonalDataBase(System.IO.Path.GetDirectoryName(filePath), System.IO.Path.GetFileNameWithoutExtension(filePath));
+            return !string.IsNullOrEmpty(result);
         }
     }
 }

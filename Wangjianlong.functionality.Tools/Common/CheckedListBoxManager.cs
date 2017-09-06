@@ -38,5 +38,20 @@ namespace Wangjianlong.functionality.Tools.Common
             }
             return list;
         }
+
+        public static void Checked(CheckedListBox checkedlistbox,bool flag)
+        {
+            for(var i = 0; i < checkedlistbox.Items.Count; i++)
+            {
+                checkedlistbox.SetItemChecked(i, flag);
+            }
+        }
+        public static void AntonymChecked(CheckedListBox checklistBox)
+        {
+            for(var i = 0; i < checklistBox.Items.Count; i++)
+            {
+                checklistBox.SetItemChecked(i, !checklistBox.GetItemChecked(i));
+            }
+        }
     }
 }

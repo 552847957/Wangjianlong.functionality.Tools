@@ -40,6 +40,8 @@
             this.TxtToArcGISbutton = new System.Windows.Forms.Button();
             this.Provincebutton = new System.Windows.Forms.Button();
             this.MultiAccessbutton = new System.Windows.Forms.Button();
+            this.MutipleSelectButton = new System.Windows.Forms.Button();
+            this.MutipleClipbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +68,7 @@
             // axLicenseControl1
             // 
             this.axLicenseControl1.Enabled = true;
-            this.axLicenseControl1.Location = new System.Drawing.Point(173, 350);
+            this.axLicenseControl1.Location = new System.Drawing.Point(173, 407);
             this.axLicenseControl1.Name = "axLicenseControl1";
             this.axLicenseControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axLicenseControl1.OcxState")));
             this.axLicenseControl1.Size = new System.Drawing.Size(32, 32);
@@ -94,7 +96,7 @@
             // 
             // ProgressBarButton
             // 
-            this.ProgressBarButton.Location = new System.Drawing.Point(13, 316);
+            this.ProgressBarButton.Location = new System.Drawing.Point(13, 373);
             this.ProgressBarButton.Name = "ProgressBarButton";
             this.ProgressBarButton.Size = new System.Drawing.Size(192, 23);
             this.ProgressBarButton.TabIndex = 5;
@@ -152,11 +154,33 @@
             this.MultiAccessbutton.UseVisualStyleBackColor = true;
             this.MultiAccessbutton.Click += new System.EventHandler(this.MultiAccessbutton_Click);
             // 
+            // MutipleSelectButton
+            // 
+            this.MutipleSelectButton.Location = new System.Drawing.Point(12, 279);
+            this.MutipleSelectButton.Name = "MutipleSelectButton";
+            this.MutipleSelectButton.Size = new System.Drawing.Size(190, 23);
+            this.MutipleSelectButton.TabIndex = 11;
+            this.MutipleSelectButton.Text = "批量Select";
+            this.MutipleSelectButton.UseVisualStyleBackColor = true;
+            this.MutipleSelectButton.Click += new System.EventHandler(this.MutipleSelectButton_Click);
+            // 
+            // MutipleClipbutton
+            // 
+            this.MutipleClipbutton.Location = new System.Drawing.Point(12, 308);
+            this.MutipleClipbutton.Name = "MutipleClipbutton";
+            this.MutipleClipbutton.Size = new System.Drawing.Size(190, 23);
+            this.MutipleClipbutton.TabIndex = 12;
+            this.MutipleClipbutton.Text = "批量Clip";
+            this.MutipleClipbutton.UseVisualStyleBackColor = true;
+            this.MutipleClipbutton.Click += new System.EventHandler(this.MutipleClipbutton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(219, 394);
+            this.ClientSize = new System.Drawing.Size(219, 449);
+            this.Controls.Add(this.MutipleClipbutton);
+            this.Controls.Add(this.MutipleSelectButton);
             this.Controls.Add(this.MultiAccessbutton);
             this.Controls.Add(this.Provincebutton);
             this.Controls.Add(this.TxtToArcGISbutton);
@@ -191,5 +215,7 @@
         private System.Windows.Forms.Button TxtToArcGISbutton;
         private System.Windows.Forms.Button Provincebutton;
         private System.Windows.Forms.Button MultiAccessbutton;
+        private System.Windows.Forms.Button MutipleSelectButton;
+        private System.Windows.Forms.Button MutipleClipbutton;
     }
 }

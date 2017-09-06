@@ -60,6 +60,12 @@ namespace Wangjianlong.functionality.Tools.Common
 
         }
 
+
+        /// <summary>
+        /// 作用：读取要素类中的字段列表
+        /// </summary>
+        /// <param name="featureClass"></param>
+        /// <returns></returns>
         public static List<TangField> GainFieldInformation(this IFeatureClass featureClass)
         {
             var list = new List<TangField>();

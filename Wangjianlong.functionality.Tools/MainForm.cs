@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Wangjianlong.functionality.Tools.Forms;
+using Wangjianlong.functionality.Tools.Forms.Mutiples;
 using Wangjianlong.functionality.Tools.Forms.Ztop;
 
 namespace Wangjianlong.functionality.Tools
@@ -75,6 +76,18 @@ namespace Wangjianlong.functionality.Tools
         private void MultiAccessbutton_Click(object sender, EventArgs e)
         {
             var form = new MultiAccessForm();
+            form.ShowDialog(this);
+        }
+
+        private void MutipleSelectButton_Click(object sender, EventArgs e)
+        {
+            var form = new MutipleSelectForm();
+            form.ShowDialog(this);
+        }
+
+        private void MutipleClipbutton_Click(object sender, EventArgs e)
+        {
+            var form = new MutipleClipForm();
             form.ShowDialog(this);
         }
     }

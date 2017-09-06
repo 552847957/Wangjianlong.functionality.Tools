@@ -55,6 +55,9 @@
     <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="ESRI.ArcGIS.Display, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
@@ -108,6 +111,7 @@
     <Compile Include="Common\CheckedListBoxManager.cs" />
     <Compile Include="Common\FeatureClassManager.cs" />
     <Compile Include="Common\FileManager.cs" />
+    <Compile Include="Common\GPHelper.cs" />
     <Compile Include="Common\PolylineManager.cs" />
     <Compile Include="Common\SpatialReferenceManager.cs" />
     <Compile Include="Common\WorkspaceManager.cs" />
@@ -141,11 +145,23 @@
     <Compile Include="Forms\LogForm.Designer.cs">
       <DependentUpon>LogForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Mutiples\MutipleClipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Mutiples\MutipleClipForm.Designer.cs">
+      <DependentUpon>MutipleClipForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Mutiples\MutipleProvinceTxtToArcGISForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Mutiples\MutipleProvinceTxtToArcGISForm.Designer.cs">
       <DependentUpon>MutipleProvinceTxtToArcGISForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Mutiples\MutipleSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Mutiples\MutipleSelectForm.Designer.cs">
+      <DependentUpon>MutipleSelectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MutlExtractCADForm.cs">
       <SubType>Form</SubType>
@@ -223,7 +239,9 @@
     <Compile Include="Tools\ITang.cs" />
     <Compile Include="Tools\MergeTCMCClass.cs" />
     <Compile Include="Tools\MergeTCMCTool.cs" />
+    <Compile Include="Tools\Mutiples\MutipleClipTool.cs" />
     <Compile Include="Tools\Mutiples\MutipleProvinceTxtToArcGISTool.cs" />
+    <Compile Include="Tools\Mutiples\MutipleSelectTool.cs" />
     <Compile Include="Tools\PolylineToPolygonTool.cs" />
     <Compile Include="Tools\ProjectionClass.cs" />
     <Compile Include="Tools\ProvinceTxtToArcGISTool.cs" />
@@ -246,8 +264,14 @@
     <EmbeddedResource Include="Forms\LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Mutiples\MutipleClipForm.resx">
+      <DependentUpon>MutipleClipForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Mutiples\MutipleProvinceTxtToArcGISForm.resx">
       <DependentUpon>MutipleProvinceTxtToArcGISForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Mutiples\MutipleSelectForm.resx">
+      <DependentUpon>MutipleSelectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MutlExtractCADForm.resx">
       <DependentUpon>MutlExtractCADForm.cs</DependentUpon>
